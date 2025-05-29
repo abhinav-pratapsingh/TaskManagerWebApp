@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Task</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <%- include('partials/header') %>
+
+    <form action="/tasks/<%= task._id %>?_method=PUT" method="POST" class="edit-task-form">
+      <label for="title">Task Title:</label>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        value="<%= task.title %>"
+        required
+        autocomplete="off"
+      />
+
+      <label for="completed" style="margin-top: 15px; display: block; font-weight: 600;">
+        <input
+          type="checkbox"
+          name="completed"
+          id="completed"
+          <%= task.completed ? "checked" : "" %>
+        />
+        Mark as Completed
+      </label>
+
+      <div style="margin-top: 20px;">
+        <button type="submit" class="btn edit">Update Task</button>
+        <a href="/tasks" class="btn cancel">Cancel</a>
+      </div>
+    </form>
+
+    <form action="/logout" method="GET" style="margin-top: 30px; text-align: center;">
+      <button class="btn logout" type="submit">Logout</button>
+    </form>
+
+    <%- include('partials/footer') %>
+  </div>
+</body>
+</html>

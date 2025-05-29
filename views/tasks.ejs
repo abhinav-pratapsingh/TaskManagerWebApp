@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasks</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <%- include('partials/header') %>
+
+    <h2>Your Tasks</h2>
+
+    <form action="/tasks" method="POST" class="add-task">
+      <input
+        type="text"
+        name="title"
+        placeholder="Add a new task"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" class="btn edit">Add Task</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Task</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tasks.forEach((task, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= task.title %></td>
+            <td>
+              <% if (task.completed) { %>
+                <span class="status-completed">Completed</span>
+              <% } else { %>
+                <span class="status-pending">Pending</span>
+              <% } %>
+            </td>
+            <td>
+              <a href="/tasks/<%= task._id %>/edit" class="btn edit">Update</a>
+            </td>
+            <td>
+              <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit" class="btn danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <form action="/logout" method="GET" style="margin-top: 30px; text-align: center;">
+      <button type="submit" class="btn logout">Logout</button>
+    </form>
+
+    <%- include('partials/footer') %>
+  </div>
+</body>
+</html>

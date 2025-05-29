@@ -1,0 +1,252 @@
+/* Container & Layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: white;
+  margin: 40px 20px;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* Header */
+header h1 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #34495e;
+}
+
+/* Add Task Form */
+.add-task {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.add-task input[type='text'] {
+  width: 70%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #d0d7de;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.add-task input[type='text']:focus {
+  border-color: #007bff;
+}
+
+.add-task button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-task button:hover {
+  background-color: #0056b3;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+th {
+  background-color: #f0f3f7;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+td:first-child,
+th:first-child {
+  width: 8%;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+  text-align: left;
+  padding-left: 20px;
+  width: 60%;
+}
+
+/* Status labels */
+.status-completed {
+  padding: 5px 10px;
+  color: #155724;
+  background-color: #d4edda;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.status-pending {
+  padding: 5px 10px;
+  color: #856404;
+  background-color: #fff3cd;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 14px;
+  font-size: 0.9em;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.edit {
+  background-color: #17a2b8;
+  color: white;
+  margin-right: 8px;
+}
+
+.btn.edit:hover {
+  background-color: #117a8b;
+}
+
+.btn.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn.danger:hover {
+  background-color: #a71d2a;
+}
+
+.btn.logout {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 25px;
+  font-weight: 700;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.btn.logout:hover {
+  background-color: #495057;
+}
+
+.btn.cancel {
+  background-color: #adb5bd;
+  color: white;
+  margin-left: 10px;
+}
+
+.btn.cancel:hover {
+  background-color: #6c757d;
+}
+
+/* Edit Task Form */
+.edit-task-form {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.edit-task-form label {
+  font-weight: 700;
+  color: #34495e;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.edit-task-form input[type='text'] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #d0d7de;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.edit-task-form input[type='text']:focus {
+  border-color: #17a2b8;
+}
+
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #34495e;
+}
+
+.auth-form label {
+  font-weight: 600;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.auth-form input[type='text'],
+.auth-form input[type='password'] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #d0d7de;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.auth-form input[type='text']:focus,
+.auth-form input[type='password']:focus {
+  border-color: #17a2b8;
+}
+
+.error-msg {
+  color: #dc3545;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #888;
+}
